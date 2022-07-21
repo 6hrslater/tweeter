@@ -5,7 +5,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: grey;
+    background-color: lightgrey;
 
 background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
 }
