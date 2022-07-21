@@ -1,4 +1,24 @@
 article{
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: space-between;
+  }
+
+.article-header{
+    height: 150px;
+    width: 250px;
+}
+.article-header .avatar{
+    vertical-align: middle;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* article{
     opacity:0.5;
     border: .5px solid black;
     border-radius: 10px;
@@ -8,30 +28,7 @@ article{
     display:inline-block;
     background-color: lightgrey;
     display:flex;
-    justify-content:
-  }
-  
-  article.tweets:hover {
-    opacity:1;
-  }
-  
-  
-  article.tweets header{
-    display:inline-block;
-    font-size:1.5em;
-    font-weight: 600;
-    height:50px;
-    width:100%;
-    padding: 0px 5px;
-    line-height:2.1;
-  }
-  
-  article.tweets .username{
-    font-weight: 300;
-    float:right;
-    padding:0px 0px 0px 10px;
-    line-height:1em;
-    font-size:.75em;
+    justify-content: space-between;
   }
   
   article.tweets .avatar{
@@ -52,4 +49,4 @@ article{
     width: 100%;
     float:left;
     padding: 0px 10px;
-  }
+  } */
