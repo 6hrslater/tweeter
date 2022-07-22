@@ -4,7 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
 // Fake data taken from initial-tweets.json
+
 const data = [
     {
         "user": {
@@ -31,6 +34,7 @@ const data = [
     }
 ]
 
+//loops through tweets
 const renderTweets = function (tweets) {
     for (let tweet of tweets) {
         let $tweet = createTweetElement(tweet);
@@ -38,6 +42,7 @@ const renderTweets = function (tweets) {
     }
 }
 
+//dynamic tweets
 const createTweetElement = function (tweet) {
     let $tweet = (
         `<article class="">
@@ -62,13 +67,25 @@ const createTweetElement = function (tweet) {
 
     return $tweet;
 }
-
 const loadtweets = () => {
     $.ajax("/tweets/", { method: "GET" })
-        .then(function (data) {
-            renderTweets(data)
-        }
-        )
-}
+      .then(function(data) {
+        //renderTweets(data);
+        console.log("string", data)
+      }
+      );
+  };
+
+$(".submit-tweet").submit(function(event) {
+    // console.log("test string", $("#tweet-text").val().serialize())
+    event.preventDefault();
+    $.ajax('/tweets/', {method: 'POST', data: $(".submit-tweet").serialize()}).then(()=> {
+        console.log("inside.then");
+    })  
+  });
+
+
+
+  loadtweets();
 
 renderTweets(data);
