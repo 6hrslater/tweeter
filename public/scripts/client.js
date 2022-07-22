@@ -70,19 +70,26 @@ const createTweetElement = function (tweet) {
 const loadtweets = () => {
     $.ajax("/tweets/", { method: "GET" })
       .then(function(data) {
-        //renderTweets(data);
+        renderTweets(data);
         console.log("string", data)
       }
       );
   };
 
-$(".submit-tweet").submit(function(event) {
-    // console.log("test string", $("#tweet-text").val().serialize())
+$(".submit-tweet").submit(function (event) {
+    console.log("test string", $("#tweet-text").val())
     event.preventDefault();
-    $.ajax('/tweets/', {method: 'POST', data: $(".submit-tweet").serialize()}).then(()=> {
-        console.log("inside.then");
-    })  
-  });
+    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+        alert("Please enter a valid tweet.")
+    } else if ($("#tweet-text").val().length > 140) {
+        alert("Tweet is too long")
+    } else {
+        $.ajax('/tweets/', { method: 'POST', data: $(".submit-tweet").serialize() }).then(() => {
+            loadtweets()
+        })
+    }
+})
+
 
 
 
