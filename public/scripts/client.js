@@ -5,7 +5,6 @@
  */
 
 
-
 // Fake data taken from initial-tweets.json
 
 const data = [
@@ -34,7 +33,7 @@ const data = [
     }
 ]
 
-//loops through tweets
+//Loops through tweets
 const renderTweets = function (tweets) {
     for (let tweet of tweets) {
         let $tweet = createTweetElement(tweet);
@@ -42,8 +41,9 @@ const renderTweets = function (tweets) {
     }
 }
 
-//dynamic tweets
+//Dynamic tweets
 const createTweetElement = function (tweet) {
+    let $date = Math.floor((Date.now() - tweet.created_at) / 86400000);
     let $tweet = (
         `<article class="">
 
@@ -57,7 +57,7 @@ const createTweetElement = function (tweet) {
   </div>
 
   <p class="container-tweet">${tweet.content.text}</p>
-  <footer class="time">${tweet.created_at}</footer>
+  <footer class="time">${$date} days ago</footer>
   <div class="icons">
   <i class="fa-solid fa-flag"></i>
   <i class="fa-solid fa-retweet"></i>
@@ -67,6 +67,8 @@ const createTweetElement = function (tweet) {
 
     return $tweet;
 }
+
+//Fetches tweets and renders them
 const loadtweets = () => {
     $.ajax("/tweets/", { method: "GET" })
       .then(function(data) {
@@ -76,6 +78,7 @@ const loadtweets = () => {
       );
   };
 
+//Posts tweets to a form, after validating through 3 requirements
 $(".submit-tweet").submit(function (event) {
     console.log("test string", $("#tweet-text").val())
     event.preventDefault();
