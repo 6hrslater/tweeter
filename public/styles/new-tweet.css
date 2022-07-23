@@ -31,3 +31,8 @@ textarea {
     font-family: "Source Sans Pro";
     color: black;
 }
+
+.error{
+    border: 3px solid red;
+    font-family: 'Bungee';
+}
