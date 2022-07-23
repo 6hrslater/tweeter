@@ -33,6 +33,8 @@ const data = [
     }
 ]
 
+$(".error").hide()
+
 //Loops through tweets
 const renderTweets = function (tweets) {
     for (let tweet of tweets) {
@@ -82,10 +84,15 @@ const loadtweets = () => {
 $(".submit-tweet").submit(function (event) {
     console.log("test string", $("#tweet-text").val())
     event.preventDefault();
+    $(".error").slideUp()
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-        alert("Please enter a valid tweet.")
+        // alert("Please enter a valid tweet.")
+        $(".error").text("Please enter a valid tweet")
+        $(".error").slideDown("slow")
     } else if ($("#tweet-text").val().length > 140) {
-        alert("Tweet is too long")
+        // alert("Tweet is too long")
+        $(".error").text("Tweet is too long")
+        $(".error").slideDown("slow")
     } else {
         $.ajax('/tweets/', { method: 'POST', data: $(".submit-tweet").serialize() }).then(() => {
             loadtweets()
