@@ -5,7 +5,13 @@
 article{
     border: 3px solid black;
     justify-content: space-between;
+    margin: 20px 0 20px 0;
   }
+article:hover{
+    border: 6px solid grey;
+    justify-content: space-between;
+    margin: 20px 0 20px 0;
+}
 
 .article-header{
     height: 150px;
@@ -40,6 +46,7 @@ img{
     flex-direction: row;
     justify-content: right;
     padding-right: 10px;
+    padding-bottom: 15px
 
 }
 

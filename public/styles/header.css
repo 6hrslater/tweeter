@@ -7,5 +7,20 @@ header {
     flex-direction: column;
     background-color: lightgrey;
 
-background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+}
+
+@media only screen and (min-width: 1024px) {
+    header {
+        width: 50%;
+        margin-top: 4%;
+        margin-left: 5%;
+        margin-right: 8%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    header {
+        height:100%;
+    }
 }

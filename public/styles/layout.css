@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+ 
+
 html {
   box-sizing: border-box;
 }
@@ -17,19 +19,31 @@ html {
  * Global layout stuff
  */
 
-body {
-  margin: 0;
-  color: #244751;
-  background-color:#eee;
-  font-family: 'Source Sans Pro';
-}
+  body {
+    margin: 0;
+    color: #244751;
+    background-color: #eee;
+    font-family: 'Source Sans Pro';
+  }
 
-.container{
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
-}
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+  }
 
+  .profile {  
+     display: flex;   
+     flex-direction: column; }  
+
+  @media only screen and (min-width: 1024px) {   
+    .profile {     
+      flex-direction: row;   
+    }
+    .container {
+      width: 70%;
+    }
+    } 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
