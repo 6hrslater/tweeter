@@ -4,50 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// Fake data taken from initial-tweets.json
-
-const data = [
-    {
-        "user": {
-            "name": "Newton",
-            "avatars": "https://i.imgur.com/73hZDYK.png"
-            ,
-            "handle": "@SirIsaac"
-        },
-        "content": {
-            "text": "If I have seen further it is by standing on the shoulders of giants"
-        },
-        "created_at": 1461116232227
-    },
-    {
-        "user": {
-            "name": "Descartes",
-            "avatars": "https://i.imgur.com/nlhLi3I.png",
-            "handle": "@rd"
-        },
-        "content": {
-            "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-    }
-]
-
-$(".error").hide()
+$(".error").hide();
 
 //Loops through tweets
 const renderTweets = function (tweets) {
-    for (let tweet of tweets) {
-        let $tweet = createTweetElement(tweet);
-        $('.tweets-container').prepend($tweet);
-    }
-}
+  $(".tweets-container").html("");
+  for (let tweet of tweets) {
+    let $tweet = createTweetElement(tweet);
+    $(".tweets-container").prepend($tweet);
+  }
+};
 
 //Dynamic tweets
 const createTweetElement = function (tweet) {
-    let $date = Math.floor((Date.now() - tweet.created_at) / 86400000);
-    let $tweet = (
-        `<article class="">
+  let $date = Math.floor((Date.now() - tweet.created_at) / 86400000);
+  let $tweet = `<article class="">
 
   <div class="article-header">
     <p>
@@ -65,44 +36,40 @@ const createTweetElement = function (tweet) {
   <i class="fa-solid fa-retweet"></i>
   <i class="fa-solid fa-heart"></i>
 </div>
-  </article>`);
+  </article>`;
 
-    return $tweet;
-}
+  return $tweet;
+};
 
 //Fetches tweets and renders them
 const loadtweets = () => {
-    $.ajax("/tweets/", { method: "GET" })
-      .then(function(data) {
-        renderTweets(data);
-        console.log("string", data)
-      }
-      );
-  };
+  $.ajax("/tweets/", { method: "GET" }).then(function (data) {
+    renderTweets(data);
+  });
+};
 
 //Posts tweets to a form, after validating through 3 requirements
 $(".submit-tweet").submit(function (event) {
-    console.log("test string", $("#tweet-text").val())
-    event.preventDefault();
-    $(".error").slideUp()
-    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-        // alert("Please enter a valid tweet.")
-        $(".error").text("Please enter a valid tweet")
-        $(".error").slideDown("slow")
-    } else if ($("#tweet-text").val().length > 140) {
-        // alert("Tweet is too long")
-        $(".error").text("Tweet is too long")
-        $(".error").slideDown("slow")
-    } else {
-        $.ajax('/tweets/', { method: 'POST', data: $(".submit-tweet").serialize() }).then(() => {
-            loadtweets()
-        })
-    }
-})
+  event.preventDefault();
+  $(".error").slideUp();
+  if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+    $(".error").text("Please enter a valid tweet");
+    $(".error").slideDown("slow");
+  } else if ($("#tweet-text").val().length > 140) {
+    $(".error").text("Tweet is too long");
+    $(".error").slideDown("slow");
+  } else {
+    $.ajax("/tweets/", {
+      method: "POST",
+      data: $(".submit-tweet").serialize(),
+    }).then(() => {
+      $("#tweet-text").val("");
+      $(".counter").val(140);
+      loadtweets();
+    });
+  }
+});
 
-
-
-
-  loadtweets();
+loadtweets();
 
 renderTweets(data);
