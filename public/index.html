@@ -1,95 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
 
-<head>
-  <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/styles/tweet.css"
+      type="text/css"
+      <!--
+      External
+      JS
+      --
+    />
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" <!-- External JS -->
-  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-
-  <!-- Navbar CSS -->
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-
-  <!-- Top nav bar (fixed) -->
-  <nav id="nav-bar">
-    <span class="header">Tweeter</span>
-    <div class="right-tagline">
-      <div class="tagline">
-        <b>Write</b> a new tweet
-      </div>
-      <div class="arrows">
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <div class="profile">
-  <header>
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Joe Whatshisname</h2>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
-    Lorem Ipsum.
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <div class="error">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-      </div> 
-      <form class="submit-tweet" action="/tweets" method="POST">
-        <label class="label" for="tweet-text"><b>What are you humming about?</b></label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="tweet-button">
-          <button class="button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav id="nav-bar">
+      <span class="header">Tweeter</span>
+      <div class="right-tagline">
+        <div class="tagline"><b>Write</b> a new tweet</div>
+        <div class="arrows">
+          <i class="fa-solid fa-angles-down"></i>
         </div>
-      </form>
-    </section>
+      </div>
+    </nav>
 
-    <section class="tweets-container"></section>
-  </main>
-</div>
-  <script type="text/javascript" src="/scripts/client.js"></script>
-</body>
+    <!-- Header -->
+    <div class="profile">
+      <header>
+        <div>
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div>
+          <h2>Joe Whatshisname</h2>
+        </div>
+      </header>
 
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div class="error">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <form class="submit-tweet" action="/tweets" method="POST">
+            <label class="label" for="tweet-text"
+              ><b>What are you humming about?</b></label
+            >
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="tweet-button">
+              <button class="button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+
+        <section class="tweets-container"></section>
+      </main>
+    </div>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+  </body>
 </html>
