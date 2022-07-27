@@ -1,26 +1,26 @@
 header {
-    display: flex;
-    height: 400px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: lightgrey;
+  display: flex;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgrey;
 
-    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
 }
 
 @media only screen and (min-width: 1024px) {
-    header {
-        width: 50%;
-        margin-top: 4%;
-        margin-left: 5%;
-        margin-right: 8%;
-    }
+  header {
+    width: 50%;
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 8%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    header {
-        height:100%;
-    }
+  header {
+    height: 100%;
+  }
 }

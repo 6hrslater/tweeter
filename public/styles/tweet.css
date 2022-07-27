@@ -1,64 +1,62 @@
-.tweets-container{
-    margin-top: 40px;
+.tweets-container {
+  margin-top: 40px;
 }
 
-article{
-    border: 3px solid black;
-    justify-content: space-between;
-    margin: 20px 0 20px 0;
-  }
-article:hover{
-    border: 6px solid grey;
-    justify-content: space-between;
-    margin: 20px 0 20px 0;
+article {
+  border: 3px solid black;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+}
+article:hover {
+  border: 6px solid grey;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
 }
 
-.article-header{
-    height: 150px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.article-header {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.article-header .avatar{
-    vertical-align: middle;
+.article-header .avatar {
+  vertical-align: middle;
 }
-.article-header .username{
-    padding-right: 10px;
-}
-
-img{
-    max-width: 100%;
-    max-height: 100%;
+.article-header .username {
+  padding-right: 10px;
 }
 
-.container-tweet{
-    border-bottom: 3px solid black;
-    margin: 10px 5px;
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.time{
-    padding-left: 10px;
+.container-tweet {
+  border-bottom: 3px solid black;
+  margin: 10px 5px;
 }
 
-.icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    padding-right: 10px;
-    padding-bottom: 15px
-
+.time {
+  padding-left: 10px;
 }
 
-.fa-solid.fa-flag:hover{
-    color : darkgoldenrod
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-right: 10px;
+  padding-bottom: 15px;
 }
 
-.fa-solid.fa-retweet:hover{
-    color : darkgoldenrod
+.fa-solid.fa-flag:hover {
+  color: darkgoldenrod;
 }
 
-.fa-solid.fa-heart:hover{
-    color : darkgoldenrod
+.fa-solid.fa-retweet:hover {
+  color: darkgoldenrod;
 }
 
+.fa-solid.fa-heart:hover {
+  color: darkgoldenrod;
+}
